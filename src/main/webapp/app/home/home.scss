@@ -4,8 +4,10 @@ Main page styles
 
 .hipster {
     display: inline-block;
-    width: 347px;
-    height: 497px;
+    //width: 347px;
+    //height: 497px;
+    width: 100%;
+    height: 100%;
     background: url('../../content/images/logo.png') no-repeat center top;
     background-size: contain;
 }

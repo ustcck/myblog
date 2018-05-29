@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 @Component({
     selector: 'jhi-carousel-basic',
     templateUrl: './carousel.component.html',
+    styleUrls: ['carousel.scss'],
     providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
 })
 export class CarouselComponent implements OnInit {
@@ -26,7 +27,7 @@ export class CarouselComponent implements OnInit {
     private _randomImageUrls(images: Array<{ id: number }>): Array<string> {
         return [1, 2, 3].map(() => {
             const randomId = images[Math.floor(Math.random() * images.length)].id;
-            return `https://picsum.photos/1500/400?image=${randomId}`;
+            return `https://picsum.photos/1900/400?image=${randomId}`;
         });
     }
 }
