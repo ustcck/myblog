@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="article">
+            <h2><span jhiTranslate="personalBlogApp.article.detail.title">Article</span> {{article.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="personalBlogApp.article.title">Title</span></dt>
+                <dd>
+                    <span>{{article.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.summary">Summary</span></dt>
+                <dd>
+                    <span>{{article.summary}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.content">Content</span></dt>
+                <dd>
+                    <span>{{article.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.click">Click</span></dt>
+                <dd>
+                    <span>{{article.click}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.create">Create</span></dt>
+                <dd>
+                    <span>{{article.create}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.update">Update</span></dt>
+                <dd>
+                    <span>{{article.update}}</span>
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.user">User</span></dt>
+                <dd>
+                    {{article.user?.login}}
+                </dd>
+                <dt><span jhiTranslate="personalBlogApp.article.category">Category</span></dt>
+                <dd>
+                    <span *ngFor="let category of article.categories; let last = last">
+                        <a [routerLink]="['/category', category?.id, 'view' ]">{{category.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <span class="fas fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/article', article.id, 'edit']"
+                    class="btn btn-primary">
+                <span class="fas fa-pencil-alt"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
