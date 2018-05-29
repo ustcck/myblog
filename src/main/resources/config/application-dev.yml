@@ -32,9 +32,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/PersonalBlog?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/personalblog?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: root
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -62,10 +62,24 @@ spring:
     liquibase:
         contexts: dev
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+#        host: localhost
+#        port: 25
+#        username:
+#        password:
+#        host: smtp.sendgrid.net
+#        port: 587
+        host: smtp.qq.com
+        port: 465
+        username: 4438707@qq.com # caokai@yijiahe.com
+        password: bfqcvpaxqdokbiid # Ckj4438707
+        protocol: smtp
+        properties:
+            tls: false
+            auth: true
+            mail:
+                smtp:
+                    ssl:
+                        enable: true
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
@@ -120,8 +134,8 @@ jhipster:
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: PersonalBlog@localhost
-        base-url: http://127.0.0.1:8080
+        from: 4438707@qq.com # app@ustcdata.cn
+        base-url: http://www.ustcdata.cn
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx:
             enabled: true
