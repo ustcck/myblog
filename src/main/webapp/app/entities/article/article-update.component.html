@@ -7,84 +7,102 @@
                 <div class="form-group" [hidden]="!article.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
                     <input type="text" class="form-control" id="id" name="id"
-                        [(ngModel)]="article.id" readonly />
+                           [(ngModel)]="article.id" readonly/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="personalBlogApp.article.title" for="field_title">Title</label>
                     <input type="text" class="form-control" name="title" id="field_title"
-                        [(ngModel)]="article.title" required maxlength="50"/>
+                           [(ngModel)]="article.title" required maxlength="50"/>
                     <div [hidden]="!(editForm.controls.title?.dirty && editForm.controls.title?.invalid)">
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.title?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                               [hidden]="!editForm.controls.title?.errors?.required"
+                               jhiTranslate="entity.validation.required">
+                            This field is required.
                         </small>
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.title?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
-                        This field cannot be longer than 50 characters.
+                               [hidden]="!editForm.controls.title?.errors?.maxlength"
+                               jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                            This field cannot be longer than 50 characters.
                         </small>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.summary" for="field_summary">Summary</label>
+                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.summary"
+                           for="field_summary">Summary</label>
                     <input type="text" class="form-control" name="summary" id="field_summary"
-                        [(ngModel)]="article.summary" maxlength="150"/>
+                           [(ngModel)]="article.summary" maxlength="150"/>
                     <div [hidden]="!(editForm.controls.summary?.dirty && editForm.controls.summary?.invalid)">
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.summary?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 150 }">
-                        This field cannot be longer than 150 characters.
+                               [hidden]="!editForm.controls.summary?.errors?.maxlength"
+                               jhiTranslate="entity.validation.maxlength" translateValues="{ max: 150 }">
+                            This field cannot be longer than 150 characters.
                         </small>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.content" for="field_content">Content</label>
-                    <textarea class="form-control" name="content" id="field_content"
-                        [(ngModel)]="article.content" ></textarea>
+                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.content">Content</label>
+                    <!--<textarea class="form-control" name="content" id="field_content"
+                        [(ngModel)]="article.content" ></textarea>-->
+                    <quill-editor name="content" id="field_content" [style]="{height: '200px'}"
+                                  [(ngModel)]="article.content"></quill-editor>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="personalBlogApp.article.click" for="field_click">Click</label>
                     <input type="number" class="form-control" name="click" id="field_click"
-                        [(ngModel)]="article.click" />
+                           [(ngModel)]="article.click"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="personalBlogApp.article.create" for="field_create">Create</label>
                     <div class="input-group">
-                        <input id="field_create" type="text" class="form-control" name="create" ngbDatepicker  #createDp="ngbDatepicker" [(ngModel)]="article.create"
+                        <input id="field_create" type="text" class="form-control" name="create" ngbDatepicker
+                               #createDp="ngbDatepicker" [(ngModel)]="article.create"
                         />
                         <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="createDp.toggle()"><i class="fas fa-calendar-alt"></i></button>
+                            <button type="button" class="btn btn-secondary" (click)="createDp.toggle()"><i
+                                class="fas fa-calendar-alt"></i></button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="personalBlogApp.article.update" for="field_update">Update</label>
                     <div class="input-group">
-                        <input id="field_update" type="text" class="form-control" name="update" ngbDatepicker  #updateDp="ngbDatepicker" [(ngModel)]="article.update"
+                        <input id="field_update" type="text" class="form-control" name="update" ngbDatepicker
+                               #updateDp="ngbDatepicker" [(ngModel)]="article.update"
                         />
                         <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="updateDp.toggle()"><i class="fas fa-calendar-alt"></i></button>
+                            <button type="button" class="btn btn-secondary" (click)="updateDp.toggle()"><i
+                                class="fas fa-calendar-alt"></i></button>
                         </span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.user" for="field_user">User</label>
-                    <select class="form-control" id="field_user" name="user" [(ngModel)]="article.user" >
+                    <label class="form-control-label" jhiTranslate="personalBlogApp.article.user"
+                           for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="article.user">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === article.user?.id ? article.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                        <option [ngValue]="userOption.id === article.user?.id ? article.user : userOption"
+                                *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}
+                        </option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label jhiTranslate="personalBlogApp.article.category" for="field_category">Category</label>
-                    <select class="form-control" id="field_category" multiple name="category" [(ngModel)]="article.categories">
-                        <option [ngValue]="getSelected(article.categories, categoryOption)" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.id}}</option>
+                    <select class="form-control" id="field_category" multiple name="category"
+                            [(ngModel)]="article.categories">
+                        <option [ngValue]="getSelected(article.categories, categoryOption)"
+                                *ngFor="let categoryOption of categories; trackBy: trackCategoryById">
+                            {{categoryOption.id}}
+                        </option>
                     </select>
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
                     <span class="fas fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                        class="btn btn-primary">
                     <span class="fas fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>

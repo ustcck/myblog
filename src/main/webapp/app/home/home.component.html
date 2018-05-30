@@ -2,9 +2,12 @@
     <jhi-carousel-basic></jhi-carousel-basic>
     <div class="col-md-9">
         <!--<jhi-carousel-basic></jhi-carousel-basic>-->
-        <h1 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h1>
-        <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
-
+        <h1 class="display-4" jhiTranslate="home.title">Welcome, ustcck's Blog!</h1>
+        <!--<p class="lead" jhiTranslate="home.subtitle">The recent dynamic</p>-->
+        <span>
+            <i class="fas fa-bars" aria-hidden="true"></i>
+            <span class="lead" jhiTranslate="home.subtitle">The recent dynamic</span>
+        </span>
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account" jhiTranslate="home.logged.message"
@@ -23,7 +26,7 @@
             </div>
         </div>
 
-        <p jhiTranslate="home.question">
+        <!--<p jhiTranslate="home.question">
             If you have any question on JHipster:
         </p>
 
@@ -44,7 +47,7 @@
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a
             href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener"
             jhiTranslate="home.github">GitHub</a>!
-        </p>
+        </p>-->
     </div>
     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>

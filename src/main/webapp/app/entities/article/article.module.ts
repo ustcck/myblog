@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { QuillModule } from 'ngx-quill';
 
 import { PersonalBlogSharedModule } from 'app/shared';
 import { PersonalBlogAdminModule } from 'app/admin/admin.module';
@@ -19,7 +20,7 @@ import {
 const ENTITY_STATES = [...articleRoute, ...articlePopupRoute];
 
 @NgModule({
-    imports: [PersonalBlogSharedModule, PersonalBlogAdminModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [PersonalBlogSharedModule, PersonalBlogAdminModule, RouterModule.forChild(ENTITY_STATES), QuillModule],
     declarations: [
         ArticleComponent,
         ArticleDetailComponent,
