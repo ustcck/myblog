@@ -13,17 +13,36 @@ Main page styles
     margin-top: 30px;
 }
 
-.display-4 {
+.articles {
     margin-top: 30px;
+}
+
+.jh-article-list {
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.jh-article-list-details span {
+    color: #000000;
+}
+
+.jh-article-content {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.jh-article-title {
+    margin-left: 15px;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
     .hipster {
         background: url('../../content/images/logo.png') no-repeat center top;
         background-size: contain;

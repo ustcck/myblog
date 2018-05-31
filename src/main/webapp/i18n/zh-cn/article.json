@@ -15,7 +15,7 @@
                 "question": "你确定要删除 Article {{ id }} 吗？"
             },
             "detail": {
-                "title": "Article"
+                "title": "最新动态"
             },
             "title": "Title",
             "summary": "Summary",

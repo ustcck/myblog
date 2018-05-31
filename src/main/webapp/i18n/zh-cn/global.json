@@ -131,5 +131,5 @@
         "idexists": "新建的 {{entityName}} 不能包含ID",
         "idnull": "Invalid ID"
     },
-    "footer": "版权所有 皖ICP备18008323号"
+    "footer": "版权所有 © 2018-2019 皖ICP备18008323号"
 }
