@@ -58,7 +58,7 @@ export const articleRoute: Routes = [
             article: ArticleResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [], // 'ROLE_USER'
             pageTitle: 'personalBlogApp.article.home.title'
         },
         canActivate: [UserRouteAccessService]

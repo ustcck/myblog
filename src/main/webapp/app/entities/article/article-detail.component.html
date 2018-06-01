@@ -15,7 +15,8 @@
                 </dd>
                 <dt><span jhiTranslate="personalBlogApp.article.content">Content</span></dt>
                 <dd>
-                    <span>{{article.content}}</span>
+                    <!--<span>{{article.content}}</span>-->
+                    <span [innerHTML]="article.content"></span>
                 </dd>
                 <dt><span jhiTranslate="personalBlogApp.article.click">Click</span></dt>
                 <dd>

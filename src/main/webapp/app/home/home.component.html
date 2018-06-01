@@ -55,9 +55,9 @@
             <div *ngFor="let article of articles ;trackBy: trackId" class="jh-article-list">
                 <div class="row-md jh-article-list-details">
                     <div class="jh-article-title-content">
-                        <div class="jh-article-title"><h4>{{article.title}}</h4></div>
+                        <div class="jh-article-title"><a [routerLink]="['/article', article.id, 'view' ]"><h4>{{article.title}}</h4></a></div>
                         <!--<div class="jh-article-content">{{article.content}}</div>-->
-                        <div [innerHTML]="article.content" class="jh-article-content"></div>
+                        <!--<div [innerHTML]="article.content" class="jh-article-content"></div>-->
                     </div>
 <!--                    <dt><span jhiTranslate="personalBlogApp.article.title">Title</span></dt>
                     <dd>
