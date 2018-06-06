@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { PersonalBlogSharedModule } from 'app/shared';
 import { HOME_ROUTE, HomeComponent } from './';
-import { CarouselComponent } from 'app/home/carousel/carousel.component';
+import { CarouselComponent } from 'app/carousel/carousel.component';
 
 @NgModule({
     imports: [PersonalBlogSharedModule, RouterModule.forChild([HOME_ROUTE])],

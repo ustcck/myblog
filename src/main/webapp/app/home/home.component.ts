@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
         this.articleService.query().subscribe(
             (res: HttpResponse<IArticle[]>) => {
                 this.articles = res.body;
-                const s = 0;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -63,5 +62,9 @@ export class HomeComponent implements OnInit {
 
     private onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    trackId(index: number, item: IArticle) {
+        return item.id;
     }
 }
